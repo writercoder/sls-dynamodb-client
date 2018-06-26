@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "watch": false,
+        "target": "es6",
+        "lib": ["es6"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./lib",
+        "declaration": true
+    },
+    "include": [
+        "src/index.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

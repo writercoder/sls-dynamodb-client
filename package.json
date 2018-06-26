@@ -1,0 +1,22 @@
+{
+  "name": "sls-dynamodb-client",
+  "version": "0.1.0",
+  "description": "Creates a local/production dynamodb client with options",
+  "main": "lib/index.js",
+  "repository": {
+    "url": "A module to make dynamodb client creation environment agnostic."
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kartik Rao",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^10.3.6",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.263.1",
+    "source-map-support": "^0.5.6"
+  }
+}
