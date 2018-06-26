@@ -1,6 +1,6 @@
 {
   "name": "@kartikrao/sls-dynamodb-client",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Creates a local/production dynamodb client with options",
   "main": "lib/index.js",
   "repository": {
