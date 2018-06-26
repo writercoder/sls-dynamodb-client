@@ -1,6 +1,6 @@
 {
   "name": "@kartikrao/sls-dynamodb-client",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Creates a local/production dynamodb client with options",
   "main": "lib/index.js",
   "repository": {
@@ -10,6 +10,12 @@
     "dynamodb-local": "java -Djava.library.path=~/Development/dynamodb_local_latest/DynamoDBLocal_lib -jar ~/Development/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb",
     "test": "cross-env NODE_ENV=development ./node_modules/.bin/jasmine-ts --config jasmine.json --project tsconfig.json test/spec.index.ts"
   },
+  "keywords": [
+    "serverless",
+    "dynamodb",
+    "serverless-offline",
+    "dynamodb-local"
+  ],
   "author": "Kartik Rao",
   "license": "MIT",
   "devDependencies": {
