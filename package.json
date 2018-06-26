@@ -1,10 +1,10 @@
 {
-  "name": "sls-dynamodb-client",
-  "version": "0.1.0",
+  "name": "@kartikrao/sls-dynamodb-client",
+  "version": "0.2.0",
   "description": "Creates a local/production dynamodb client with options",
   "main": "lib/index.js",
   "repository": {
-    "url": "A module to make dynamodb client creation environment agnostic."
+    "url": "https://github.com/kartikrao/sls-dynamodb-client.git"
   },
   "scripts": {
     "dynamodb-local": "java -Djava.library.path=~/Development/dynamodb_local_latest/DynamoDBLocal_lib -jar ~/Development/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb",
