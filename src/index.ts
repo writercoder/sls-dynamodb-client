@@ -1,17 +1,22 @@
 import * as AWS from "aws-sdk";
 
-export class DynamoDBClient {
-    localRegionName: string;
-    localEndpoint: string;
-    constructor(localRegionName: string = "localhost", localEndpoint: string = "http://localhost:8000") {
+const DEFAULT_REGION: string = "localhost";
+const DEFAULT_ENDPOINT: string = "http://localhost:8000";
 
+export class DynamoDBClient {
+    localRegion: string;
+    localEndpoint: string;
+
+    constructor(localRegion: string = DEFAULT_REGION, localEndpoint: string = DEFAULT_ENDPOINT) {
+        this.localEndpoint = localEndpoint;
+        this.localRegion = localRegion;
     }
 
-    private static applyEnvironment(options: any = {}): any {
+    private applyEnvironment(options: any = {}): any {
         let responseOptions = { ...options };
         if (process.env.IS_OFFLINE) {
-            responseOptions.region = "localhost";
-            responseOptions.endpoint = "http://localhost:8000";
+            responseOptions.region = this.localRegion;
+            responseOptions.endpoint = this.localEndpoint;
         }
         return responseOptions;
     }
@@ -22,8 +27,8 @@ export class DynamoDBClient {
      * @returns AWS.DynamoDB.DocumentClient
      * @memberof DynamoDBClient
      */
-    static getDocumentClient(options: any = {}): AWS.DynamoDB.DocumentClient {
-        return new AWS.DynamoDB.DocumentClient(DynamoDBClient.applyEnvironment(options));
+    getDocumentClient(options: any = {}): AWS.DynamoDB.DocumentClient {
+        return new AWS.DynamoDB.DocumentClient(this.applyEnvironment(options));
     }
 
     /**
@@ -32,7 +37,7 @@ export class DynamoDBClient {
      * @returns AWS.DynamoDB
      * @memberof DynamoDBClient
      */
-    static getClient(options: any = {}): AWS.DynamoDB {
-        return new AWS.DynamoDB(DynamoDBClient.applyEnvironment(options));
+    getClient(options: any = {}): AWS.DynamoDB {
+        return new AWS.DynamoDB(this.applyEnvironment(options));
     }
 }

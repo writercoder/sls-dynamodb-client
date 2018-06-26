@@ -7,12 +7,18 @@
     "url": "A module to make dynamodb client creation environment agnostic."
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dynamodb-local": "java -Djava.library.path=~/Development/dynamodb_local_latest/DynamoDBLocal_lib -jar ~/Development/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb",
+    "test": "cross-env NODE_ENV=development ./node_modules/.bin/jasmine-ts --config jasmine.json --project tsconfig.json test/spec.index.ts"
   },
   "author": "Kartik Rao",
   "license": "MIT",
   "devDependencies": {
+    "@adinfinity/jasmine-ts": "^0.3.0",
+    "@types/jasmine": "^2.8.8",
     "@types/node": "^10.3.6",
+    "cross-env": "^5.2.0",
+    "jasmine-core": "^3.1.0",
+    "jasmine-spec-reporter": "^4.2.1",
     "typescript": "^2.9.2"
   },
   "dependencies": {
