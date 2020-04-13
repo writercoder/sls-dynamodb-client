@@ -16,7 +16,7 @@ A module to make dynamodb client creation environment agnostic.
 
 ## Installation
 
-`npm install --save sls-dynamodb-client`
+`npm install --save @kartikrao/sls-dynamodb-client`
 
 ## Usage
 
